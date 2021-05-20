@@ -12,8 +12,7 @@ What you see in the *GCC High* and *DoD* cloud environments is...
 ### Desired End Result ###
 This is an example of what this solution provides:
 
-![Result of this solution](https://github.com/mikevasiloff/sp-hover-card/blob/main/PersonCard.png?raw=true)
-> Note that if you are browsing from a DoD network you probably won't be able to see the above image 😟
+![Result of this solution](https://user-images.githubusercontent.com/8918397/118977860-ebe70f00-b976-11eb-9023-a7f6a4aa5313.png)
 
 ## Solution Composition ##
 This is a very simple solution using the [column formatting](https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/column-formatting) feature of SharePoint which lets you "customize how fields in SharePoint lists and libraries are displayed". This is accomplished by constructing a JSON object that describes the elements and styles that are displayed when a field is shown in a view, and part of this includes the ability to create a custom hover card.
