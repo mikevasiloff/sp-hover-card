@@ -1,0 +1,210 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "children": [
+    {
+        "elmType": "div",
+        "style": {
+            "white-space": "nowrap",
+            "overflow": "hidden",
+            "text-overflow": "ellipsis"
+        },
+        "children": [
+        {
+            "elmType": "div",
+            "forEach": "principal in @currentField",
+            "style": {
+                "white-space": "nowrap",
+                "overflow": "hidden",
+                "text-overflow": "ellipsis"
+            },
+            "txtContent": "[$principal.title]"
+        }]
+    }],
+    "customCardProps": {
+        "openOnEvent": "hover",
+        "directionalHint": "bottomCenter",
+        "isBeakVisible": false,
+        "formatter": {
+            "elmType": "div",
+            "style": {
+                "width": "400px",
+                "padding": "20px 24px",
+                "flex-shrink": "0",
+                "color": "#333333",
+                "display": "block"
+            },
+            "children": [
+            {
+                "elmType": "div",
+                "forEach": "principal in @currentField",
+                "style": {
+                    "white-space": "nowrap",
+                    "overflow": "hidden",
+                    "text-overflow": "ellipsis"
+                },
+                "children": [
+                {
+                    "elmType": "div",
+                    "style": {
+                        "display": "flex",
+                        "align-items": "center",
+                        "padding-top": "=if(loopIndex('principal') > 0, '10px', '0'"
+                    },
+                    "attributes": {
+                      "class": "=if(loopIndex('principal') > 0, 'dropHintlineTop', ''"
+                    },
+                    "children": [
+                    {
+                        "elmType": "img",
+                        "style": {
+                            "width": "72px",
+                            "height": "72px",
+                            "overflow": "hidden",
+                            "border-radius": "50%",
+                            "margin": "2px",
+                            "flex-shrink": "0"
+                        },
+                        "attributes": {
+                            "src": "=if(length([$principal.email]) == 0, @currentWeb + '/_layouts/15/images/o14_group_placeholder_96.png', if(endsWith([$principal.email],'.onmicrosoft.com'), 'https://webmail.apps.mil/owa/service.svc/s/GetPersonaPhoto?email=' + [$principal.email] + '&size=HR96x96&cb=637286019074321774', @currentWeb + '/_layouts/15/userphoto.aspx?size=M&accountname=' + [$principal.email]))",
+                            "title": "[$principal.title]"
+                        }
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "margin-left": "12px",
+                            "height": "72px",
+                            "width": "320px"
+                        },
+                        "children": [
+                        {
+                            "elmType": "div",
+                            "style": {
+                                "overflow": "hidden",
+                                "text-overflow": "ellipsis",
+                                "white-space": "nowrap"
+                            },
+                            "attributes": {
+                                "class": "ms-fontSize-16 ms-fontWeight-semibold",
+                                "title": "[$principal.title]"
+                            },
+                            "txtContent": "[$principal.title]"
+                        },
+                        {
+                            "elmType": "div",
+                            "txtContent": "[$principal.jobTitle]"
+                        },
+                        {
+                            "elmType": "div",
+                            "txtContent": "[$principal.department]"
+                        },
+                        {
+                            "elmType": "div",
+                            "txtContent": "[$principal.email]"
+                        }]
+                    }]
+                },
+                {
+                    "elmType": "div",
+                    "style": {
+                        "margin-top": "5px"
+                    },
+                    "children": [
+                    {
+                        "elmType": "a",
+                        "attributes": {
+                            "class": "ms-fontColor-themePrimary ms-bgColor-gray20--hover",
+                            "href": "='mailto:' + [$principal.email]"
+                        },
+                        "style": {
+                            "padding": "10px",
+                            "cursor": "pointer",
+                            "text-decoration": "none",
+                            "display": "=if(length([$principal.email]) == 0, 'none', 'inline-block')"
+                        },
+                        "children": [
+                        {
+                            "elmType": "span",
+                            "attributes": {
+                                "iconName": "Mail",
+                                "class": "ms-fontSize-16"
+                            },
+                            "style": {
+                                "padding-right": "6px",
+                                "position": "relative",
+                                "top": "3px"
+                            }
+                        },
+                        {
+                            "elmType": "span",
+                            "txtContent": "Send email"
+                        }]
+                    },
+                    {
+                        "elmType": "a",
+                        "attributes": {
+                            "class": "ms-fontColor-themePrimary ms-bgColor-gray20--hover",
+                            "target": "_blank",
+                            "href": "=@currentWeb + '/_layouts/15/userdisp.aspx?ID=' + [$principal.id]"
+                        },
+                        "style": {
+                            "padding": "10px",
+                            "cursor": "pointer",
+                            "text-decoration": "none",
+                            "display": "=if(length([$principal.sip]) == 0, 'none', 'inline-block')"
+                        },
+                        "children": [
+                        {
+                            "elmType": "span",
+                            "attributes": {
+                                "iconName": "ContactCard",
+                                "class": "ms-fontSize-16"
+                            },
+                            "style": {
+                                "padding-right": "6px",
+                                "position": "relative",
+                                "top": "3px"
+                            }
+                        },
+                        {
+                            "elmType": "span",
+                            "txtContent": "View Profile"
+                        }]
+                    },
+                    {
+                        "elmType": "a",
+                        "attributes": {
+                            "class": "ms-fontColor-themePrimary ms-bgColor-gray20--hover",
+                            "target": "_blank",
+                            "href": "=@currentWeb + '/_layouts/15/userdisp.aspx?ID=' + [$principal.id]"
+                        },
+                        "style": {
+                            "padding": "10px",
+                            "cursor": "pointer",
+                            "text-decoration": "none",
+                            "display": "=if(length([$principal.email]) == 0, 'inline-block', 'none')"
+                        },
+                        "children": [
+                        {
+                            "elmType": "span",
+                            "attributes": {
+                                "iconName": "Group",
+                                "class": "ms-fontSize-16"
+                            },
+                            "style": {
+                                "padding-right": "6px",
+                                "position": "relative",
+                                "top": "3px"
+                            }
+                        },
+                        {
+                            "elmType": "span",
+                            "txtContent": "View Members"
+                        }]
+                    }]
+                }]
+            }]
+        }
+    }
+}
