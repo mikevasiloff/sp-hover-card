@@ -48,5 +48,14 @@ You can apply it to the "Created By" and "Modified By" fields across an entire s
 4. Click the Advanced mode at the bottom, and overwrite it with the JSON from the [AuthorEditorField.json](https://github.com/mikevasiloff/sp-hover-card/blob/main/AuthorEditorField.json) file
 5. Click the Save button
 
-## Future Changes ##
-I also have a modified version of this that I'm still refining for **custom** People/Group fields where you could have a person or a group be shown. Once completed I'll add that to this page as well.
+## Other Person/Group Fields ##
+There's a separate [PersonGroupField](https://github.com/mikevasiloff/sp-hover-card/blob/main/PersonGroupField.json) file to handle the extra complexities that custom Person/Group fields can introduce, such as:
+* SharePoint Groups (shows a "View Members" button)
+* AD Security Groups
+* Office 365 Groups (shows the group's profile pic)
+* Multiple entries/selections (shows cards stacked on top of each other)
+
+### Caveats ###
+Please be aware of the following items:
+1. When the person/group field allows multiple entries it does **not** provide values for Department or JobTitle
+2. Rendering Office 365 Group profile pics is handled via OWA and the file is already set with the DoD URL. To use within **GCC High** change [PersonGroupField line 69](https://github.com/mikevasiloff/sp-hover-card/blob/main/PersonGroupField.json#L69) from *https://webmail.apps.mil* (DoD) to *https://outlook.office365.us* (GCC High)
