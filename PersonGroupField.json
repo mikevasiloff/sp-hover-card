@@ -67,7 +67,8 @@
                         },
                         "attributes": {
                             "src": "=if(length([$principal.email]) == 0, @currentWeb + '/_layouts/15/images/o14_group_placeholder_96.png', if(endsWith([$principal.email],'.onmicrosoft.com'), 'https://webmail.apps.mil/owa/service.svc/s/GetPersonaPhoto?email=' + [$principal.email] + '&size=HR96x96&cb=637286019074321774', @currentWeb + '/_layouts/15/userphoto.aspx?size=M&accountname=' + [$principal.email]))",
-                            "title": "[$principal.title]"
+                            "title": "[$principal.title]",
+                            "alt": "='Profile picture of ' + [$principal.title]"
                         }
                     },
                     {
