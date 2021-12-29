@@ -44,7 +44,8 @@
                             },
                             "attributes": {
                                 "src": "=@currentWeb + '/_layouts/15/userphoto.aspx?size=M&accountname=' + @currentField.email",
-                                "title": "@currentField.title"
+                                "title": "@currentField.title",
+                                "alt": "='Profile picture of ' + @currentField.title"
                             }
                         },
                         {
