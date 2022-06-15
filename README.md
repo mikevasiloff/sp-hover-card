@@ -1,5 +1,9 @@
 # SharePoint User Custom Hover Card
-The default experience within the *GCC High* and *DoD* clouds for SharePoint Online does not show a hover card for users.  This code repository provides working JSON column formatting to add a useful hover card.
+> **June 2022 Update**: Somewhere between April 2022 and June 15th Microsoft updated the _GCC High_ and _DoD_ clouds to support the _native_ person hover experience.  As a result this solution is no longer needed.
+
+Original (now outdated) article content is below with some strike-throughs were applicable:
+
+~~The default experience within the *GCC High* and *DoD* clouds for SharePoint Online does not show a hover card for users.~~  This code repository provides working JSON column formatting to add a useful hover card.
 
 ## Commercial Experience ##
 What you see in the *Commercial* and *GCC* cloud environments when hovering over a user is something like this:
@@ -7,7 +11,7 @@ What you see in the *Commercial* and *GCC* cloud environments when hovering over
 
 ## US Federal Government Experience ##
 What you see in the *GCC High* and *DoD* cloud environments is...
-> Well, **no hover card** at all. And that's what this repo is addressing.
+> ~~Well, **no hover card** at all. And that's what this repo is addressing.~~
 
 ### Desired End Result ###
 This is an example of what this solution provides:
